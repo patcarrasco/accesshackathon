@@ -4,7 +4,7 @@ import {
   loadUserData,
   Person,
 } from 'blockstack';
-import { Header } from 'semantic-ui-react';
+import { Header, Menu } from 'semantic-ui-react';
 
 const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
 
@@ -57,6 +57,13 @@ export default class Profile extends Component {
   }
 
   navbar() {
+    return (
+      <Menu inverted>
+        <Menu.Item>
+          HealthApp
+        </Menu.Item>
+      </Menu>
+    )
   }
 
   render() {
