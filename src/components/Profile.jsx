@@ -58,19 +58,17 @@ export default class Profile extends Component {
 
   navbar() {
     return (
-      <Menu >
-        <Menu.Item>
-          HealthApp
-        </Menu.Item>
-      </Menu>
+      <div>
+         
+      </div>
     )
   }
 
   render() {
 
     return (
-      !isSignInPending() ? this.profile(): null
-      // !isSignInPending() ? this.navbar() : null
+      // !isSignInPending() ? this.profile(): null
+      !isSignInPending() ? this.navbar() : null
     );
   }
 
