@@ -92,7 +92,9 @@ class Navbar extends PureComponent {
     }
 
     render() {
-        return this.navbar()
+        return (
+          this.navbar()
+        )
     }
 }
 

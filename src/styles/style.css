@@ -1,5 +1,30 @@
 .nav-bar {
   height: 100px;
-  background-color: cyan; }
+  background-color: cyan;
+  display: flex; }
+  .nav-bar nav a {
+    margin: 10px; }
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20px;
+  flex-direction: column;
+  padding: 10px; }
+  .list-container input {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 3px solid black; }
+  .list-container .former-partner {
+    width: 100%;
+    text-align: center;
+    background-color: #63a500;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 1.5em;
+    margin: 5px; }
 
 /*# sourceMappingURL=style.css.map */
