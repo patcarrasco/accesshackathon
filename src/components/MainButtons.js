@@ -12,14 +12,13 @@ export default class MainButtons extends React.PureComponent {
         super(props)
 
         this.content = this.content.bind(this)
+        this.clearHandler = this.clearHandler.bind(this)
+        this.alertHandler = this.alertHandler.bind(this)
     }
 
-    clearHandler() {
-        
-    }
+    clearHandler() {}
 
-    alertHandler)
-
+    alertHandler() {}
 
     content() {
         return (

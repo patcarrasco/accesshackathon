@@ -93,15 +93,6 @@ export default class Profile extends Component {
     )
   }
 
-  list() {
-    const {person} = this.state
-    console.log(person)
-    return (
-      <Segment>
-        <Header> whats up </Header>
-      </Segment>
-    )
-  }
 
   contactButtons() {
     return (
@@ -124,9 +115,8 @@ export default class Profile extends Component {
     return (
       <div>
         <Navbar handleSignOut={this.props.handleSignOut}/>
-        {this.list()}
-        {this.contactButtons()}
         <List/>
+        {this.contactButtons()}
       </div>
     )
   }

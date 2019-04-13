@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'semantic-ui-react';
 
 export class List extends Component {
 
@@ -34,7 +35,9 @@ export class List extends Component {
 
   filteredPartners() {
     return this.filterPartners().map(function(partner, index) {
-      return <div className="former-partner" key={index}> {partner} </div>
+      return <div className="former-partner" key={index} style={{display:'flex', flexDirection:'row', justifyContent:"space-between", alignItems:"center"}}> {partner} 
+          <Button>add</Button>
+      </div>
     })
   }
 
@@ -47,7 +50,6 @@ export class List extends Component {
         <div className="list-container">
         <input className="list-container-search" name="searchTerm" onChange={this.searchHandler} value={this.state.searchTerm}/>
           {this.filteredPartners()}
-        
         </div>
       </div>
     )
