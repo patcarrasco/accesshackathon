@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 
 
 const rootReducer = combineReducers({
-    
+
 })
 
 const configureStore = () => (

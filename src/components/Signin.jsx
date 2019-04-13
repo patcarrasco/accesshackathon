@@ -5,12 +5,23 @@ import { Input, Button } from 'semantic-ui-react'
 export default class Signin extends Component {
   constructor(props) {
     super(props);
+    this.state={loginActive: false}
+
+    this.onHoverInHandler = this.onHoverInHandler.bind(this)
+    this.onHoverOutHandler = this.onHoverOutHandler.bind(this)
   }
 
+  onHoverInHandler() {
+    this.setState({loginActive: true})
+  }
 
+  onHoverOutHandler() {
+    this.setState({loginActive: false})
+  }
 
   content() {
     const { handleSignIn } = this.props;
+
 
     return (
         < div style = {
@@ -69,41 +80,20 @@ export default class Signin extends Component {
                 // backgroundColor: '#52489C',
             }
         } >
-            < h2 style = {
-                {
-                    fontFamily: "Roboto, san-serif",
-                    fontWeight: "400",
-                    fontSize: "50px",
-                    color: "#fbfff1",
-                }
-            } >
-              tagline?
-            </h2>
-        </div>
-        <div style = {
-            {
-                // borderStyle:"solid",
-                // backgroundColor: "#fbfff1",
-                // display: "flex",
-                // flexDirection:"column",
-                // alignItems: "center",
-                // justifyContent:"space-evenly",
-                // width:"26em",
-                // minHeight:"230px",
-            }
-        }>
-            <Button size="large" onClick={handleSignIn.bind(this)}
-              style={{
-                backgroundColor: 'transparent',
-                borderRadius: 'unset',
-                borderStyle: 'solid',
-                borderColor: 'white',
-                color: 'black',
-                fontFamily: 'Roboto, sans-serif'
-              }}
-            >
-              sign in with <span style={{color:'black'}}>BLOCKSTACK</span>
-            </Button> 
+          <Button size="massive" onClick={handleSignIn.bind(this)}
+            style={{
+              backgroundColor: 'transparent',
+              borderRadius: 'unset',
+              borderStyle: 'solid',
+              borderColor: this.state.loginActive ? 'red': 'white',
+              color: 'white',
+              fontFamily: 'Roboto, sans-serif'
+            }}
+            onMouseEnter={this.onHoverInHandler.bind(this)}
+            onMouseOut={this.onHoverOutHandler.bind(this)}
+          >
+            sign in with blockstack
+          </Button> 
         </div>
     </div>
     )

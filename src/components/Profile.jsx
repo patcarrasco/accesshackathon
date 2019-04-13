@@ -5,6 +5,7 @@ import {
   Person,
 } from 'blockstack';
 import { Header, Menu, Input, Button, Responsive, Segment } from 'semantic-ui-react';
+import Navbar from './Navbar';
 
 const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
 
@@ -121,7 +122,7 @@ export default class Profile extends Component {
   content() {
     return (
       <div>
-        {this.navbar()}
+        <Navbar handleSignOut={this.props.handleSignOut}/>
         {this.list()}
         {this.contactButtons()}
       </div>
@@ -129,10 +130,7 @@ export default class Profile extends Component {
   }
 
   render() {
-    return (
-      // !isSignInPending() ? this.profile(): null
-      !isSignInPending() ? this.content() : null
-    );
+    return !isSignInPending() ? this.content() : null;
   }
 
   componentWillMount() {
