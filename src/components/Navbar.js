@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react'
+
 import {
   isSignInPending,
   loadUserData,
@@ -8,27 +9,26 @@ import { Header, Menu, Input, Button, Responsive, Segment } from 'semantic-ui-re
 
 const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
 
-export default class Profile extends Component {
-  constructor(props) {
-  	super(props);
 
-  	this.state = {
-  	  person: {
-  	  	name() {
-          return 'Anonymous';
+class Navbar extends PureComponent {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        person: {
+          name() {
+            return 'Anonymous';
+          },
+          avatarUrl() {
+            return avatarFallbackImage;
+          },
         },
-  	  	avatarUrl() {
-  	  	  return avatarFallbackImage;
-  	  	},
-  	  },
-    };
-    
-    this.profile = this.profile.bind(this);
-    this.content = this.content.bind(this);
-  }
+      };
 
+      this.profile = this.profile.bind(this);
+    }
 
-  profile() {
+    profile() {
     const { handleSignOut } = this.props;
     const { person } = this.state;
 
@@ -48,12 +48,6 @@ export default class Profile extends Component {
           </button>
         </p>
       </div>
-    )
-  }
-
-  list() {
-    return (
-      <Header>HEALTH APP</Header>
     )
   }
 
@@ -91,53 +85,15 @@ export default class Profile extends Component {
     )
   }
 
-  list() {
-    const {person} = this.state
-    console.log(person)
-    return (
-      <Segment>
-        <Header> whats up </Header>
-      </Segment>
-    )
-  }
+    componentWillMount() {
+        this.setState({
+            person: new Person(loadUserData().profile),
+        });
+    }
 
-  contactButtons() {
-    return (
-      <div>
-        <div>
-          <Button primary>
-            Reset
-          </Button>
-        </div>
-        <div>
-          <Button color='red'>
-            Alert
-          </Button>
-        </div>
-      </div>
-    )
-  }
-
-  content() {
-    return (
-      <div>
-        {this.navbar()}
-        {this.list()}
-        {this.contactButtons()}
-      </div>
-    )
-  }
-
-  render() {
-    return (
-      // !isSignInPending() ? this.profile(): null
-      !isSignInPending() ? this.content() : null
-    );
-  }
-
-  componentWillMount() {
-    this.setState({
-      person: new Person(loadUserData().profile),
-    });
-  }
+    render() {
+        return this.navbar()
+    }
 }
+
+export default Navbar
