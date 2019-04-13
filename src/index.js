@@ -9,8 +9,7 @@ import App from './components/App.jsx';
 const store = configureStore()
 
 // Require Sass file so webpack can build it
-import bootstrap from 'bootstrap/dist/css/bootstrap.css';
-import style from './styles/style.css';
+
 
 ReactDOM.render(
     <Provider store={store}>

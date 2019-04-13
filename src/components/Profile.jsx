@@ -58,7 +58,7 @@ export default class Profile extends Component {
 
   navbar() {
     return (
-      <Menu inverted>
+      <Menu >
         <Menu.Item>
           HealthApp
         </Menu.Item>
@@ -69,8 +69,8 @@ export default class Profile extends Component {
   render() {
 
     return (
-      // !isSignInPending() ? this.profile(): null
-      !isSignInPending() ? this.list() : null
+      !isSignInPending() ? this.profile(): null
+      // !isSignInPending() ? this.navbar() : null
     );
   }
 
