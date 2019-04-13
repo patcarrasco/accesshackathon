@@ -58,8 +58,11 @@ export default class Profile extends Component {
 
   navbar() {
     return (
-      <div>
-         
+      <div className="nav-bar">
+        <nav>
+          <a href="#">word</a>
+          <a href="#">more words</a>
+        </nav>
       </div>
     )
   }
