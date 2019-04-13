@@ -7,3 +7,31 @@
     }
 
 }
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20px;
+  flex-direction: column;
+  padding: 10px;
+
+
+    input {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 3px solid black;
+    }
+
+    .former-partner {
+      width: 100%;
+      text-align: center;
+      background-color: rgb(99, 165, 0);
+      color: white;
+      border: 1px solid black;
+      padding: 10px;
+      font-size: 1.5em;
+      margin: 5px;
+    }
+}
