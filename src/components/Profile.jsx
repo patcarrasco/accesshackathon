@@ -23,12 +23,12 @@ export default class Profile extends Component {
   	};
   }
 
-  render() {
+
+  profile() {
     const { handleSignOut } = this.props;
     const { person } = this.state;
 
     return (
-      !isSignInPending() ?
       <div className="panel-welcome" id="section-2">
         <div className="avatar-section">
           <img src={ person.avatarUrl() ? person.avatarUrl() : avatarFallbackImage } className="img-rounded avatar" id="avatar-image" />
@@ -43,7 +43,14 @@ export default class Profile extends Component {
             Logout
           </button>
         </p>
-      </div> : null
+      </div>
+    )
+  }
+
+  render() {
+
+    return (
+      !isSignInPending() ? this.profile(): null
     );
   }
 
