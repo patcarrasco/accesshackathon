@@ -4,6 +4,7 @@ import {
   loadUserData,
   Person,
 } from 'blockstack';
+import { Header } from 'semantic-ui-react';
 
 const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
 
@@ -20,7 +21,9 @@ export default class Profile extends Component {
   	  	  return avatarFallbackImage;
   	  	},
   	  },
-  	};
+    };
+    
+    this.profile = this.profile.bind(this);
   }
 
 
@@ -47,10 +50,20 @@ export default class Profile extends Component {
     )
   }
 
+  list() {
+    return (
+      <Header>HEALTH APP</Header>
+    )
+  }
+
+  navbar() {
+  }
+
   render() {
 
     return (
-      !isSignInPending() ? this.profile(): null
+      // !isSignInPending() ? this.profile(): null
+      !isSignInPending() ? this.list() : null
     );
   }
 
