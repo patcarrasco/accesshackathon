@@ -4,8 +4,11 @@ SafeList is an application that allows users to keep track of sexual partners in
 
 ## Prerequisites
 
-Users must register with Blockstack.js. In order to do so, visit: https://browser.blockstack.org/.
-Once registered, users will be able to log into SafeList and interact with other users on our network.
+- Users must register with Blockstack.js. In order to do so, visit: https://browser.blockstack.org/.
+  Once registered, users will be able to log into SafeList and interact with other users on our network.
+- Clone the repo from https://github.com/patcarrasco/accesshackathon
+- `cd` into `hackathon-api`, run `bundle`, `rails s`
+- `cd` back into the main repo, and run `npm i && npm start`
 
 ## How to Use SafeList
 
