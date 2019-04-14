@@ -5,6 +5,7 @@ import {
   Person,
 } from 'blockstack';
 import { Header, Menu, Input, Button, Responsive, Segment } from 'semantic-ui-react';
+import List from "./List"
 import Navbar from './Navbar';
 
 const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
@@ -92,15 +93,6 @@ export default class Profile extends Component {
     )
   }
 
-  list() {
-    const {person} = this.state
-    console.log(person)
-    return (
-      <Segment>
-        <Header> whats up </Header>
-      </Segment>
-    )
-  }
 
   contactButtons() {
     return (
@@ -123,7 +115,7 @@ export default class Profile extends Component {
     return (
       <div>
         <Navbar handleSignOut={this.props.handleSignOut}/>
-        {this.list()}
+        <List/>
         {this.contactButtons()}
       </div>
     )

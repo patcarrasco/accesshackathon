@@ -60,7 +60,6 @@ class Navbar extends PureComponent {
   render() {
     return this.navbar()
   }
- 
 }
 
 export default Navbar
